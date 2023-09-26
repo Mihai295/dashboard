@@ -1,26 +1,39 @@
-import { Component } from '@angular/core';
-import { tableData } from './data';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { TableDataService } from '../table-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table-data',
   templateUrl: './table-data.component.html',
   styleUrls: ['./table-data.component.css']
 })
-export class TableDataComponent {
-  tableData = tableData;
+export class TableDataComponent implements OnInit, OnDestroy {
+  tableData!: any;
   modalVisible = false;
   modalTitle!: string;
   comunicari: { title: string, detalii: string }[] = [];
 
-  constructor() {
-    this.tableData.sort(compareTableData);
+  private dataSubscription!: Subscription;
+
+  constructor(private tableDataService: TableDataService) { }
+
+  ngOnInit() {
+    this.dataSubscription = this.tableDataService.filteredData$.subscribe((data) => {
+      this.tableData = data;
+      this.tableData.sort(compareTableData);
+    });
+  }
+
+  ngOnDestroy() {
+    // Unsubscribe to prevent memory leaks
+    this.dataSubscription.unsubscribe();
   }
   
   // Retrieves the number of cases that match a given column and value.
   getCasesCount(column: string, value: string): number {
     let count = 0;
   
-    for (const row of this.tableData) {
+    for (const row of this.tableDataService.tableData) {
       if ((row as { [key: string]: any })[column] === value) {
         count++;
       }

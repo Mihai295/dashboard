@@ -1,0 +1,90 @@
+<div class="fixed inset-0 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <!-- To create a component for each input -->
+      <div>
+        <div class="mb-4">
+          <label for="aplicatie" class="block mb-2 font-semibold">Aplicatie</label>
+          <select id="aplicatie" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedAplicatie">
+            <option [value]=""></option>
+            <option *ngFor="let aplicatie of aplicatieValues" [value]="aplicatie">{{ aplicatie }}</option>
+          </select>
+        </div>
+  
+        
+        <div class="mb-4">
+            <label for="proces" class="block mb-2 font-semibold">Proces</label>
+            <select id="proces" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedProces">
+              <option [value]=""></option>
+              <option *ngFor="let proces of procesValues" [value]="proces">{{ proces }}</option>
+            </select>
+          </div>
+          
+          <div class="mb-4">
+            <label for="tip-document" class="block mb-2 font-semibold">Tip document</label>
+            <select id="tip-document" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedDocument">
+              <option [value]=""></option>
+              <option *ngFor="let tipDocument of tipDocumentValues" [value]="tipDocument">{{ tipDocument }}</option>
+            </select>
+          </div>
+    
+          <div class="mb-4">
+            <label for="judet" class="block mb-2 font-semibold">Judet</label>
+            <select id="judet" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedJudet">
+              <option [value]=""></option>
+              <option *ngFor="let judet of judetValues" [value]="judet">{{ judet }}</option>
+            </select>
+          </div>
+    
+          <div class="mb-4">
+            <label for="uat" class="block mb-2 font-semibold">UAT</label>
+            <select id="uat" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedUat">
+              <option [value]=""></option>
+              <option *ngFor="let uat of uatResponsabilValues" [value]="uat">{{ uat }}</option>
+            </select>
+          </div>
+    
+          <div class="mb-4">
+            <label for="responsabil" class="block mb-2 font-semibold">Responsabil</label>
+            <select id="responsabil" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedResponsabil">
+              <option [value]=""></option>
+              <option *ngFor="let responsabil of responsabilValues" [value]="responsabil">{{ responsabil }}</option>
+            </select>
+          </div>
+    
+          <div class="mb-4">
+            <label for="status-sla" class="block mb-2 font-semibold">Status SLA</label>
+            <select id="status-sla" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedStatusSLA">
+              <option [value]=""></option>
+              <option *ngFor="let statusSLA of statusSLAValues" [value]="statusSLA">{{ statusSLA }}</option>
+            </select>
+          </div>
+  
+  
+          <div class="mb-4">
+            <label class="block mb-2 font-semibold">Data limita</label>
+            <div class="flex gap-2">
+              <input
+                type="date"
+                id="from-date-limita"
+                class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                [min]="getEarliestDate()"
+                [max]="getOldestDate()"
+                [(ngModel)]="selectedFromDate"
+              />
+              <input
+                type="date"
+                id="to-date-limita"
+                class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                [min]="getEarliestDate()"
+                [max]="getOldestDate()"
+                [(ngModel)]="selectedToDate"
+              />
+            </div>
+          </div>
+      </div>
+  
+      <div class="mt-6 flex justify-end">
+        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" (click)="applyFilters()">Aplica filtrele</button>
+      </div>
+    </div>
+  </div>
