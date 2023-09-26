@@ -1,0 +1,36 @@
+<div class="bg-gray-100">
+    <div class="flex flex-wrap gap-4">
+      <div class="w-2"></div>
+      <div class="flex-1">Numar caz</div>
+      <div class="flex-1">Tip document</div>
+      <div class="flex-1">Proces</div>
+      <div class="flex-1">Aplicatie</div>
+      <div class="flex-1">Beneficiar</div>
+      <div class="flex-1">Data start</div>
+      <div class="flex-1">Data limita</div>
+      <div class="flex-1">Responsabil</div>
+      <div class="flex-1">UAT responsabil</div>
+      <div class="flex-1">Judet</div>
+      <div class="flex-1">Status SLA</div>
+    </div>
+  
+    <!-- Table rows -->
+    <div *ngFor="let row of tableData" class="flex flex-wrap gap-4 mb-[1px] items-center h-12" >
+      <div [ngClass]="{
+        'bg-red-500': row.statusSLA === 'Termen depasit',
+        'bg-orange-500': row.statusSLA === 'Termenul se apropie',
+        'bg-green-500': row.statusSLA === 'In termen'
+      }" class="w-2 self-stretch p-[0.8rem]"></div>
+      <div class="flex-1"><i class="fa-solid fa-arrow-up-right-from-square cursor-pointer" (click)="openModal(row)"></i> {{ row.numarCaz }}</div>
+      <div class="flex-1">{{ row.tipDocument }}</div>
+      <div class="flex-1">{{ row.proces }}</div>
+      <div class="flex-1">{{ row.aplicatie }}</div>
+      <div class="flex-1">{{ row.beneficiar }}</div>
+      <div class="flex-1">{{ row.dataStart }}</div>
+      <div class="flex-1">{{ row.dataLimita }}</div>
+      <div class="flex-1">{{ row.responsabil }}</div>
+      <div class="flex-1">{{ row.uatResponsabil }}</div>
+      <div class="flex-1">{{ row.judet }}</div>
+      <div class="flex-1">{{ row.statusSLA }}</div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="flex flex-col">
+  <div class="flex flex-wrap gap-4 mb-4 items-center">
+    <app-filters></app-filters>
+    <div class="flex gap-4 items-center ml-auto">
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+          <span class="text-white">{{ useGetCasesCount('statusSLA', 'Termen depasit') }}</span>
+        </div>
+      </div>
+    
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
+          <span class="text-white">{{ useGetCasesCount('statusSLA', 'Termenul se apropie') }}</span>
+        </div>
+      </div>
+    
+      <div class="flex items-center">
+        <div class="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+          <span class="text-white">{{ useGetCasesCount('statusSLA', 'In termen') }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-table-data></app-table-data>
+
+</div>
