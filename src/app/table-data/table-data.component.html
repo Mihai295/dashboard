@@ -1,4 +1,4 @@
-<div class="bg-gray-100">
+<div >
     <div class="flex flex-wrap gap-4">
       <div class="w-2"></div>
       <div class="flex-1">Numar caz</div>
@@ -33,4 +33,5 @@
       <div class="flex-1">{{ row.judet }}</div>
       <div class="flex-1">{{ row.statusSLA }}</div>
     </div>
+    <app-case-modal *ngIf="modalVisible" [title]="modalTitle" [comunicari]="comunicari" (closeModal)="hideModal()"></app-case-modal>
   </div>

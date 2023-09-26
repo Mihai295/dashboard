@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FiltersComponent } from './filters/filters.component';
 import { TableDataComponent } from './table-data/table-data.component';
+import { CaseModalComponent } from './case-modal/case-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     FiltersComponent,
-    TableDataComponent
+    TableDataComponent,
+    CaseModalComponent
   ],
   imports: [
     BrowserModule

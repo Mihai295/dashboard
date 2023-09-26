@@ -11,6 +11,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1001',
@@ -24,6 +42,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1001',
@@ -37,6 +73,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1001',
@@ -50,6 +104,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1001',
@@ -63,6 +135,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1001',
@@ -76,6 +166,24 @@ export const tableData = [
       uatResponsabil: '',
       judet: 'Valcea',
       statusSLA: 'Termen depasit',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1091',
@@ -89,6 +197,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Babeni',
       judet: 'Salaj',
       statusSLA: 'Termenul se apropie',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1091',
@@ -102,6 +228,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Babeni',
       judet: 'Salaj',
       statusSLA: 'Termenul se apropie',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1234',
@@ -115,6 +259,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Mihaesti',
       judet: 'Arges',
       statusSLA: 'In termen',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1234',
@@ -128,6 +290,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Mihaesti',
       judet: 'Arges',
       statusSLA: 'In termen',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1234',
@@ -141,6 +321,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Mihaesti',
       judet: 'Arges',
       statusSLA: 'In termen',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     {
       numarCaz: 'CER-1234',
@@ -154,6 +352,24 @@ export const tableData = [
       uatResponsabil: 'Primaria Mihaesti',
       judet: 'Arges',
       statusSLA: 'In termen',
+      comunicari: [
+        {
+          title: 'Cerere pentru determinarea competentei',
+          detalii: 'trimis la 12-06-2023 14:30:00'
+        },
+        {
+          title: 'Raspuns la cererea pentru determinarea competentei',
+          detalii: 'primit la 12-06-2023 15:00:00'
+        },
+        {
+            title: 'Cerere pentru clarificari',
+            detalii: 'trimis la 12-06-2023 14:30:00'
+          },
+          {
+            title: 'Raspuns la cererea pentru clarificari',
+            detalii: 'primit la 12-06-2023 15:00:00'
+          },
+      ],
     },
     
   ];

@@ -8,6 +8,9 @@ import { tableData } from './data';
 })
 export class TableDataComponent {
   tableData = tableData;
+  modalVisible = false;
+  modalTitle!: string;
+  comunicari: { title: string, detalii: string }[] = [];
 
   constructor() {
     this.tableData.sort(compareTableData);
@@ -18,7 +21,7 @@ export class TableDataComponent {
     let count = 0;
   
     for (const row of this.tableData) {
-      if ((row as { [key: string]: string })[column] === value) {
+      if ((row as { [key: string]: any })[column] === value) {
         count++;
       }
     }
@@ -27,10 +30,17 @@ export class TableDataComponent {
 
   openModal(row: any) {
     console.log('Open modal for case:', row);
-    // Implement your logic to show the modal and pass the relevant data
-    // ... your modal logic ...
+    this.modalVisible = true;
+    this.modalTitle = row.numarCaz;
+    this.comunicari = row.comunicari;
+  }
+  hideModal() {
+    this.modalVisible = false;
   }
 }
+
+
+
 function compareTableData(a: any, b: any) {
   const limitComparison = compareDates(b.dataLimita, a.dataLimita);
   if (limitComparison !== 0) {
