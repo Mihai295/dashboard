@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { tableData } from '../table-data/data';
 import { TableDataService } from '../table-data.service';
 
@@ -8,6 +8,8 @@ import { TableDataService } from '../table-data.service';
   styleUrls: ['./filter-modal.component.css']
 })
 export class FilterModalComponent {
+  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
+  
   aplicatieValues: string[] = [];
   procesValues: string[] = [];
   tipDocumentValues: string[] = [];
@@ -17,13 +19,13 @@ export class FilterModalComponent {
   statusSLAValues: string[] = [];
   filteredData: any[] = tableData;
 
-  selectedAplicatie!:string;
-  selectedProces!: string;
-  selectedDocument!: string;
-  selectedJudet!: string;
-  selectedUat!: string;
-  selectedResponsabil!: string;
-  selectedStatusSLA!: string;
+  selectedAplicatie:string = '';
+  selectedProces: string = '';
+  selectedDocument: string = '';
+  selectedJudet: string = '';
+  selectedUat: string = '';
+  selectedResponsabil: string = '';
+  selectedStatusSLA: string = '';
   selectedFromDate: string = this.getEarliestDate(); 
   selectedToDate: string = this.getOldestDate(); 
 
@@ -57,6 +59,11 @@ export class FilterModalComponent {
       }
     });
     return this.formatDate(oldestDate);
+  }
+
+  closeFilterModal() {
+    console.log('filter comp');
+    this.closeModal.emit();
   }
 
   applyFilters() {

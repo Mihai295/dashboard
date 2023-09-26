@@ -1,11 +1,12 @@
 <div class="fixed inset-0 flex items-center justify-center">
-    <div class="bg-white rounded-lg shadow-lg p-6">
+    <div class="bg-white rounded-lg shadow-lg p-6 relative">
+      <i class="fa-solid fa-xmark text-gray-400 cursor-pointer text-lg absolute top-2 right-2" (click)="closeFilterModal()"></i>
       <!-- To create a component for each input -->
       <div>
         <div class="mb-4">
           <label for="aplicatie" class="block mb-2 font-semibold">Aplicatie</label>
           <select id="aplicatie" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedAplicatie">
-            <option [value]=""></option>
+            <option value="">-</option>
             <option *ngFor="let aplicatie of aplicatieValues" [value]="aplicatie">{{ aplicatie }}</option>
           </select>
         </div>
@@ -14,7 +15,7 @@
         <div class="mb-4">
             <label for="proces" class="block mb-2 font-semibold">Proces</label>
             <select id="proces" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedProces">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let proces of procesValues" [value]="proces">{{ proces }}</option>
             </select>
           </div>
@@ -22,7 +23,7 @@
           <div class="mb-4">
             <label for="tip-document" class="block mb-2 font-semibold">Tip document</label>
             <select id="tip-document" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedDocument">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let tipDocument of tipDocumentValues" [value]="tipDocument">{{ tipDocument }}</option>
             </select>
           </div>
@@ -30,7 +31,7 @@
           <div class="mb-4">
             <label for="judet" class="block mb-2 font-semibold">Judet</label>
             <select id="judet" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedJudet">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let judet of judetValues" [value]="judet">{{ judet }}</option>
             </select>
           </div>
@@ -38,7 +39,7 @@
           <div class="mb-4">
             <label for="uat" class="block mb-2 font-semibold">UAT</label>
             <select id="uat" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedUat">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let uat of uatResponsabilValues" [value]="uat">{{ uat }}</option>
             </select>
           </div>
@@ -46,7 +47,7 @@
           <div class="mb-4">
             <label for="responsabil" class="block mb-2 font-semibold">Responsabil</label>
             <select id="responsabil" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedResponsabil">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let responsabil of responsabilValues" [value]="responsabil">{{ responsabil }}</option>
             </select>
           </div>
@@ -54,7 +55,7 @@
           <div class="mb-4">
             <label for="status-sla" class="block mb-2 font-semibold">Status SLA</label>
             <select id="status-sla" class="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="selectedStatusSLA">
-              <option [value]=""></option>
+              <option value="">-</option>
               <option *ngFor="let statusSLA of statusSLAValues" [value]="statusSLA">{{ statusSLA }}</option>
             </select>
           </div>

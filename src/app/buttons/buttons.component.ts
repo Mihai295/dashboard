@@ -11,4 +11,8 @@ export class ButtonsComponent{
   openFilterModal() {
     this.filterModalVisible = true; // Set to true to open the filter modal
   }
+  closeFilterModal() {
+    console.log('here');
+    this.filterModalVisible = false; // Set to true to open the filter modal
+  }
 }

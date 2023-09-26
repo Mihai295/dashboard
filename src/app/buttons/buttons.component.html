@@ -4,4 +4,4 @@
       <button class="px-4 py-2 bg-blue-500 text-white">Tipărire</button>
       <button class="px-4 py-2 bg-blue-500 text-white">Export</button>
     </div>
-<app-filter-modal *ngIf="filterModalVisible"></app-filter-modal>
+<app-filter-modal *ngIf="filterModalVisible" (closeModal)="closeFilterModal()"></app-filter-modal>
