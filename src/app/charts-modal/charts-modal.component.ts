@@ -13,17 +13,14 @@ Chart.register(...registerables);
 export class ChartsModalComponent implements OnInit, AfterViewInit {
   piechartData: any;
   barChartData: any;
-  tipDocStatusChartData: any;
   @ViewChild('pieChart') pieChartElementRef!: ElementRef;
   @ViewChild('barChart') barChartElementRef!: ElementRef;
-  @ViewChild('tipDocStatusChart') tipDocStatusChartElementRef!: ElementRef;
 
   @Output() closeModal = new EventEmitter<void>();
 
   tableData: any[] =[];
   piechartInstance: any; 
   barChartInstance: any; 
-  tipDocStatusChartInstance: any;
   
   
   
@@ -35,14 +32,12 @@ export class ChartsModalComponent implements OnInit, AfterViewInit {
       this.tableData = data;
       this.refreshPieChart();
       this.refreshbarChart();
-      this.refreshtipDocStatusChart();
     });
   }
 
   ngAfterViewInit() {
     this.refreshPieChart() 
     this.refreshbarChart(); 
-    this.refreshtipDocStatusChart();
   }
 
   
@@ -158,75 +153,6 @@ export class ChartsModalComponent implements OnInit, AfterViewInit {
     this.renderbarChart();
   }
 
-  private preparetipDocStatusChartData() {
-    const tipDocStatusChartData: any[] = [];
-    const tipDocStatusChartCounts: Record<string, number> = {};
-    const labels: string[] = [];
-    const values: number[] = [];
-    const backgroundColors: string[] = [];
-  
-    const statusSLAColors: Record<string, string> = {
-      'Termen depasit': 'red',
-      'Termenul se apropie': 'orange',
-      'In termen': 'green',
-    };
-  
-    this.tableData.forEach((item: any) => {
-      const statusSLA = item.statusSLA;
-      const tipDocument = item.tipDocument;
-      const dataPoint = {
-        tipDocument: tipDocument,
-        statusSLA: statusSLA,
-        backgroundColor: statusSLAColors[statusSLA] || 'gray',
-      };
-  
-      tipDocStatusChartData.push(dataPoint);
-    });
-  
-    tipDocStatusChartData.forEach((dataPoint: any) => {
-      const tipDocument = dataPoint.tipDocument;
-      if (tipDocStatusChartCounts[tipDocument]) {
-        tipDocStatusChartCounts[tipDocument]++;
-      } else {
-        tipDocStatusChartCounts[tipDocument] = 1;
-        labels.push(tipDocument);
-        backgroundColors.push(dataPoint.backgroundColor);
-      }
-    });
-  
-    values.push(...labels.map((label: string) => tipDocStatusChartCounts[label]));
-  
-    this.tipDocStatusChartData = {
-      labels,
-      datasets: [{
-        label: 'Numar de cazuri',
-        data: values,
-        backgroundColor: backgroundColors,
-      }],
-    };
-  }
-  
-
-  private rendertipDocStatusChart() {
-    const tipDocStatusChartElement = this.tipDocStatusChartElementRef.nativeElement;
-    const ctx = tipDocStatusChartElement.getContext('2d');
-
-    if (this.tipDocStatusChartInstance) {
-      this.tipDocStatusChartInstance.destroy();
-    }
-    this.tipDocStatusChartInstance = new Chart(ctx, {
-      type: 'bar', 
-      data:this.tipDocStatusChartData,
-      options: {
-        indexAxis: 'y',
-      },
-    });
-  }
-
-  private refreshtipDocStatusChart() {
-    this.preparetipDocStatusChartData();
-    this.rendertipDocStatusChart();
-  }
 
   private refreshPieChart() {
     this.prepareStatusSLAData();
