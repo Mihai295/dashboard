@@ -11,6 +11,7 @@ import { TableDataComponent } from './table-data/table-data.component';
 import { CaseModalComponent } from './case-modal/case-modal.component';
 import { FilterModalComponent } from './filter-modal/filter-modal.component';
 import { ChartsModalComponent } from './charts-modal/charts-modal.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChartsModalComponent } from './charts-modal/charts-modal.component';
     TableDataComponent,
     CaseModalComponent,
     FilterModalComponent,
-    ChartsModalComponent
+    ChartsModalComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule, 

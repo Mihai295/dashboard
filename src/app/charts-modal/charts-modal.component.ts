@@ -8,44 +8,35 @@ Chart.register(...registerables);
 @Component({
   selector: 'app-charts-modal',
   templateUrl: './charts-modal.component.html',
-  styleUrls: ['./charts-modal.component.css']
+  styleUrls: ['./charts-modal.component.css'],
 })
 export class ChartsModalComponent implements OnInit, AfterViewInit {
   piechartData: any;
   docTypeChartData: any;
-  judetChartData: any; 
+  judetChartData: any;
   responsabilChartData: any;
 
   @ViewChild('pieChart') pieChartElementRef!: ElementRef;
   @ViewChild('docTypeChart') docTypeChartElementRef!: ElementRef;
   @ViewChild('judetChart') judetChartElementRef!: ElementRef;
-  @ViewChild('responsabilChart') responsabilChartElementRef!: ElementRef; 
+  @ViewChild('responsabilChart') responsabilChartElementRef!: ElementRef;
 
   @Output() closeModal = new EventEmitter<void>();
 
-  tableData: any[] =[];
-  piechartInstance: any; 
-  docTypeChartInstance: any; 
-  judetChartInstance: any; 
-  responsabilChartInstance: any;
-  
-  constructor(private tableDataService: TableDataService) { }
+  tableData: any[] = [];
+  piechartInstance: any;
+
+  constructor(private tableDataService: TableDataService) {}
 
   ngOnInit() {
     this.tableDataService.filteredData$.subscribe((data) => {
       this.tableData = data;
       this.refreshPieChart();
-      this.refreshBarChart('tipDocument', 'Numar de cazuri', this.docTypeChartElementRef, this.docTypeChartInstance);
-      this.refreshBarChart('judet', 'Numar de cazuri', this.judetChartElementRef, this.judetChartInstance);
-      this.refreshBarChart('responsabil', 'Numar de cazuri', this.responsabilChartElementRef, this.responsabilChartInstance);
     });
   }
 
   ngAfterViewInit() {
-    this.refreshPieChart() 
-    this.refreshBarChart('tipDocument', 'Numar de cazuri', this.docTypeChartElementRef, this.docTypeChartInstance);
-    this.refreshBarChart('judet', 'Numar de cazuri', this.judetChartElementRef, this.judetChartInstance);
-    this.refreshBarChart('responsabil', 'Numar de cazuri', this.responsabilChartElementRef, this.responsabilChartInstance);
+    this.refreshPieChart();
   }
 
   closeChartsModal() {
@@ -73,12 +64,12 @@ export class ChartsModalComponent implements OnInit, AfterViewInit {
     });
 
     const labels = Object.keys(statusSLACounts);
-    const values = labels.map(label => statusSLACounts[label]);
+    const values = labels.map((label) => statusSLACounts[label]);
 
     this.piechartData = {
       labels,
       data: values,
-      backgroundColor: backgroundColors
+      backgroundColor: backgroundColors,
     };
   }
 
@@ -87,77 +78,26 @@ export class ChartsModalComponent implements OnInit, AfterViewInit {
     const ctx = pieChartElement.getContext('2d');
 
     if (this.piechartInstance) {
-      this.piechartInstance.destroy(); 
+      this.piechartInstance.destroy();
     }
 
     this.piechartInstance = new Chart(ctx, {
       type: 'pie',
       data: {
         labels: this.piechartData.labels,
-        datasets: [{
-          data: this.piechartData.data,
-          backgroundColor: this.piechartData.backgroundColor
-        }]
+        datasets: [
+          {
+            data: this.piechartData.data,
+            backgroundColor: this.piechartData.backgroundColor,
+          },
+        ],
       },
-      options: {}
+      options: {},
     });
   }
 
   private refreshPieChart() {
     this.prepareStatusSLAData();
     this.renderPieChart();
-  }
-
-  private prepareBarChartData(dataKey: string, label: string) {
-    const dataCounts: Record<string, number> = {};
-    const labels: string[] = [];
-    const values: number[] = [];
-    const backgroundColors: string[] = [];
-  
-    this.tableData.forEach((item: any) => {
-      const dataValue = item[dataKey];
-      if (dataCounts[dataValue]) {
-        dataCounts[dataValue]++;
-      } else {
-        dataCounts[dataValue] = 1;
-        labels.push(dataValue);
-        backgroundColors.push('blue'); 
-      }
-    });
-  
-    labels.forEach(label => {
-      values.push(dataCounts[label]);
-    });
-  
-    return {
-      labels,
-      datasets: [{
-        label,
-        data: values,
-        backgroundColor: backgroundColors,
-      }],
-    };
-  }
-
-  private renderBarChart(chartElementRef: ElementRef, chartData: any, chartInstance: any) {
-    const chartElement = chartElementRef.nativeElement;
-    const ctx = chartElement.getContext('2d');
-
-    if (chartInstance) {
-      chartInstance.destroy();
-    }
-
-    chartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: chartData,
-      options: {
-        indexAxis: 'y',
-      },
-    });
-  }
-
-  private refreshBarChart(dataKey: string, label: string, chartElementRef: ElementRef, chartInstance: any) {
-    const chartData = this.prepareBarChartData(dataKey, label);
-    this.renderBarChart(chartElementRef, chartData, chartInstance);
   }
 }

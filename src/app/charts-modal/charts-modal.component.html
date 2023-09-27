@@ -1,26 +1,25 @@
-<div class=" fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[800px] shadow-lg bg-white overflow-auto p-12">
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[800px] shadow-lg bg-white overflow-auto p-12">
     <div class="w-[800px] relative">
-        <i class="fa-solid fa-xmark text-gray-400 cursor-pointer text-lg absolute top-2 right-2" (click)="closeChartsModal()"></i>
-        <h2 class="text-2xl font-bold py-12 text-center">Grafice</h2>
-        <div class="grid grid-cols-2 ">
-            <div>
-                <h2 class="mb-6">Pie Chart: Număr cazuri în funcție de status SLA</h2>
-                <canvas #pieChart></canvas>
-            </div>
-            <div>
-                <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de tip document</h2>
-                <canvas #docTypeChart></canvas>
-            </div>
-            <div>
-                <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de judet</h2>
-                <canvas #judetChart></canvas>
-              </div>
-              <div>
-                <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de responsabil</h2>
-                <canvas #responsabilChart></canvas>
-            </div>
-            <!-- <canvas #tipDocStatusChart></canvas> -->
+      <i class="fa-solid fa-xmark text-gray-400 cursor-pointer text-lg absolute top-2 right-2" (click)="closeChartsModal()"></i>
+      <h2 class="text-2xl font-bold py-12 text-center">Grafice</h2>
+      <div class="grid grid-cols-2">
+        <div>
+          <h2 class="mb-6">Pie Chart: Număr cazuri în funcție de status SLA</h2>
+          <canvas #pieChart></canvas>
         </div>
-        
+        <div>
+          <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de tip document</h2>
+          <app-bar-chart [dataKey]="'tipDocument'" [label]="'Număr cazuri'" [data]="tableData"></app-bar-chart>
+        </div>
+        <div>
+          <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de judet</h2>
+          <app-bar-chart [dataKey]="'judet'" [label]="'Număr cazuri'" [data]="tableData"></app-bar-chart>
+        </div>
+        <div>
+          <h2 class="mb-6">Bar Chart: Număr cazuri în funcție de responsabil</h2>
+          <app-bar-chart [dataKey]="'responsabil'" [label]="'Număr cazuri'" [data]="tableData"></app-bar-chart>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
