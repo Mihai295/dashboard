@@ -12,6 +12,7 @@ import { CaseModalComponent } from './case-modal/case-modal.component';
 import { FilterModalComponent } from './filter-modal/filter-modal.component';
 import { ChartsModalComponent } from './charts-modal/charts-modal.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     CaseModalComponent,
     FilterModalComponent,
     ChartsModalComponent,
-    BarChartComponent
+    BarChartComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule, 

@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, AfterViewInit, ElementRef, ViewChild, SimpleChanges } from '@angular/core';
 import 'chart.js';
 import { Chart } from 'chart.js';
 import { registerables } from 'chart.js';
@@ -9,7 +9,7 @@ Chart.register(...registerables);
   template: '<canvas #barChart></canvas>',
   styleUrls: ['./bar-chart.component.css']
 })
-export class BarChartComponent implements AfterViewInit {
+export class BarChartComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() dataKey: string = '';
   @Input() label: string = '';
   @Input() data: any[] = [];
@@ -20,8 +20,19 @@ export class BarChartComponent implements AfterViewInit {
 
   constructor() { }
 
+  ngOnInit(){
+  }
+
   ngAfterViewInit() {
     this.refreshBarChart();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    if (changes['data']){
+      setTimeout(() => {
+        this.refreshBarChart();
+      }, 10);
+    }
   }
 
   private prepareBarChartData(dataKey: string, label: string, data: any[]) {
