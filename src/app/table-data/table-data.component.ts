@@ -25,11 +25,9 @@ export class TableDataComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // Unsubscribe to prevent memory leaks
     this.dataSubscription.unsubscribe();
   }
   
-  // Retrieves the number of cases that match a given column and value.
   getCasesCount(column: string, value: string): number {
     let count = 0;
   
@@ -42,7 +40,6 @@ export class TableDataComponent implements OnInit, OnDestroy {
   }
 
   openModal(row: any) {
-    console.log('Open modal for case:', row);
     this.modalVisible = true;
     this.modalTitle = row.numarCaz;
     this.comunicari = row.comunicari;
@@ -54,7 +51,7 @@ export class TableDataComponent implements OnInit, OnDestroy {
 
 
 
-function compareTableData(a: any, b: any) {
+export function compareTableData(a: any, b: any) {
   const limitComparison = compareDates(b.dataLimita, a.dataLimita);
   if (limitComparison !== 0) {
     return limitComparison;

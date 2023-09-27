@@ -1,7 +1,8 @@
     <div class="flex gap-2">
       <button class="px-4 py-2 bg-blue-500 text-white" (click)="openFilterModal()">Filtre</button>
-      <button class="px-4 py-2 bg-blue-500 text-white">Grafice</button>
+      <button class="px-4 py-2 bg-blue-500 text-white" (click)="openGraficeModal()">Grafice</button>
       <button class="px-4 py-2 bg-blue-500 text-white">Tipărire</button>
       <button class="px-4 py-2 bg-blue-500 text-white">Export</button>
     </div>
 <app-filter-modal *ngIf="filterModalVisible" (closeModal)="closeFilterModal()"></app-filter-modal>
+<app-charts-modal *ngIf="graficeModalVisible" (closeModal)="closeGraficeModal()"></app-charts-modal>

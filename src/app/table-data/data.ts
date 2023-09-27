@@ -249,7 +249,7 @@ export const tableData = [
     },
     {
       numarCaz: 'CER-1234',
-      tipDocument: 'H003',
+      tipDocument: 'F003',
       proces: 'H_BUC_02b',
       aplicatie: 'RINA',
       beneficiar: '1970429368017',

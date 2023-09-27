@@ -1,18 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TableDataService } from '../table-data.service';
+import { Subscription } from 'rxjs';
+import { compareTableData } from '../table-data/table-data.component';
 
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.css']
 })
-export class ButtonsComponent{
+export class ButtonsComponent implements OnInit, OnDestroy{
+  piechartData!: any;
   filterModalVisible = false;
+  filterChartsVisible = false;
+  graficeModalVisible = false;
+  tableData: any =[];
+  private dataSubscription!: Subscription;
+
+  constructor(private tableDataService: TableDataService) { }
+
+    ngOnInit() {
+      this.dataSubscription = this.tableDataService.filteredData$.subscribe((data) => {
+        this.tableData = data;
+        this.tableData.sort(compareTableData);
+      });
+
+    }
+
+    ngOnDestroy() {
+      this.dataSubscription.unsubscribe();
+    }
 
   openFilterModal() {
-    this.filterModalVisible = true; // Set to true to open the filter modal
+    this.filterModalVisible = true; 
   }
   closeFilterModal() {
-    console.log('here');
-    this.filterModalVisible = false; // Set to true to open the filter modal
+    this.filterModalVisible = false; 
   }
+
+  openGraficeModal() {
+    this.graficeModalVisible = true;
+  }
+
+  closeGraficeModal() {
+    this.graficeModalVisible = false;
+  }
+
 }

@@ -62,7 +62,6 @@ export class FilterModalComponent {
   }
 
   closeFilterModal() {
-    console.log('filter comp');
     this.closeModal.emit();
   }
 
@@ -126,13 +125,13 @@ export class FilterModalComponent {
   }
 
   private isDatesDifferenceLessThanOneYear(fromFilterDate: string, toFilterDate: string) {
-    const oneYearInMilliseconds = 365 * 24 * 60 * 60 * 1000; // Number of milliseconds in a year
+    const oneYearInMilliseconds = 365 * 24 * 60 * 60 * 1000; 
   
     const fromDate = new Date(fromFilterDate).getTime();
     const toDate = new Date(toFilterDate).getTime();
   
   
-    const dateDifference = Math.abs(toDate - fromDate); // Get the absolute difference in milliseconds
+    const dateDifference = Math.abs(toDate - fromDate); 
   
     return dateDifference < oneYearInMilliseconds;
   }

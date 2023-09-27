@@ -4,19 +4,19 @@
     <div class="flex gap-4 items-center ml-auto">
       <div class="flex items-center">
         <div class="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-          <span class="text-white">{{ useGetCasesCount('statusSLA', 'Termen depasit') }}</span>
+          <span class="text-white">{{termenDepasitCount}}</span>
         </div>
       </div>
     
       <div class="flex items-center">
         <div class="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
-          <span class="text-white">{{ useGetCasesCount('statusSLA', 'Termenul se apropie') }}</span>
+          <span class="text-white">{{termenulSeApropieCount}}</span>
         </div>
       </div>
     
       <div class="flex items-center">
         <div class="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-          <span class="text-white">{{ useGetCasesCount('statusSLA', 'In termen') }}</span>
+          <span class="text-white">{{inTermenCount}}</span>
         </div>
       </div>
     </div>

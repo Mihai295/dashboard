@@ -10,6 +10,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { TableDataComponent } from './table-data/table-data.component';
 import { CaseModalComponent } from './case-modal/case-modal.component';
 import { FilterModalComponent } from './filter-modal/filter-modal.component';
+import { ChartsModalComponent } from './charts-modal/charts-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterModalComponent } from './filter-modal/filter-modal.component';
     ButtonsComponent,
     TableDataComponent,
     CaseModalComponent,
-    FilterModalComponent
+    FilterModalComponent,
+    ChartsModalComponent
   ],
   imports: [
     BrowserModule, 

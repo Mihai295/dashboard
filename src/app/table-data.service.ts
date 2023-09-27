@@ -23,37 +23,32 @@ export class TableDataService {
     this.filteredData = this.tableData.filter((item) => {
       let isMatch = true;
       
-      // Check each filter property and compare it with the corresponding data property
       for (const key of Object.keys(filterObject) as Array<keyof FilterObject>) {
         if (key === 'fromDataLimita' || key === 'toDataLimita') {
-        // Handle date range filtering
+        // date range filtering
         const itemDate = this.formatDate(item['dataLimita']);
         const fromFilterDate = filterObject['fromDataLimita'] ? filterObject['fromDataLimita'] : '';
         const toFilterDate = filterObject['toDataLimita'] ? filterObject['toDataLimita'] : '';
         
         if (fromFilterDate && toFilterDate) {
-          // Use compareDates function to compare the dates
           const comparisonFrom = this.compareDates(itemDate, fromFilterDate);
           const comparisonTo = this.compareDates(itemDate, toFilterDate);
 
-          // Check if itemDate is outside the date range
           if (comparisonFrom < 0 || comparisonTo > 0) {
             isMatch = false;
-            console.log('de la: ' + fromFilterDate + 'la ' + toFilterDate + 'iar data este ' + itemDate);
-            break; // No need to check further
+            break; 
 
           }
         } 
       }
       else if (filterObject[key] && item[key] !== filterObject[key]) {
         isMatch = false;
-        break; // No need to check further
+        break; 
       }
       }
   
       return isMatch;
     });
-    console.log(this.filteredData);
     this.filteredDataSubject.next(this.filteredData);
   }
 
